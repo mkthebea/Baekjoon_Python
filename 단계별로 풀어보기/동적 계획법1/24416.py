@@ -13,7 +13,7 @@ def fibo_dynamic(n):
     count = 0
     for i in range(2, n):
         count += 1
-        f[i] = f[i - 1] + f[1 - 2]
+        f[i] = f[i - 1] + f[i - 2]
     return count
 
 n = int(input())
