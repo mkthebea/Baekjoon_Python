@@ -6,6 +6,7 @@ for i in range(9):
         maxnum = maxtem
         x = i + 1
         y = tem.index(maxtem) + 1
+# 모든 데이터가 0일 경우 처리 필요
 if maxnum == 0:
     x, y = 1, 1
 print(maxnum)
