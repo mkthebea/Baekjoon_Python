@@ -1,23 +1,11 @@
 n = int(input())
-cost = []
+dp = []
 for _ in range(n):
-    cost.append(list(map(int, input().split())))
-# print(cost)
-
-dp = [0] * n
-dp[0] = min(cost[0])
-pre = cost[0].index(dp[0])
+    dp.append(list(map(int, input().split())))
 
 for i in range(1, n):
-    tem = cost[i][:]
-    del tem[pre]
-    dp[i] = min(tem)
-    # dp[i] = min(filter(lambda c : cost[i].index(c) != pre, cost[i]))
-    if pre != cost[i].index(dp[i]):
-        pre = cost[i].index(dp[i])
-    else:
-        tem2 = list(filter(lambda c : cost[i][c] == dp[i], range(n)))
-        pre = tem2[1]
-    # print(pre)
+    dp[i][0] += min(dp[i-1][1] , dp[i-1][2])
+    dp[i][1] += min(dp[i-1][0] , dp[i-1][2])
+    dp[i][2] += min(dp[i-1][0] , dp[i-1][1])
 
-print(sum(dp))
+print(min(dp[n-1][0], dp[n-1][1], dp[n-1][2]))
