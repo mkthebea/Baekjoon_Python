@@ -17,6 +17,8 @@
 
 # 불필요한 if문, 변수 할당 줄이기
 
+# 파이썬으로 제출하면 시간 초과, pypy로 제출
+
 import sys
 input = sys.stdin.readline
 from collections import deque
