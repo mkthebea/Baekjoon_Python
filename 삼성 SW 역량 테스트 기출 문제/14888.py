@@ -3,7 +3,7 @@ from itertools import permutations
 n = int(input())
 A = list(map(int, input().split()))
 cnt = list(map(int, input().split()))   # 각 연산자의 개수
-max_res = 0
+max_res = -1000000000
 min_res = 1000000000
 # 0:+, 1:-, 2:*, 3://
 operators = []
